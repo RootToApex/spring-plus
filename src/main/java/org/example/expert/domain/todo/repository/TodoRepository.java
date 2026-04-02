@@ -10,7 +10,8 @@ import org.springframework.data.repository.query.Param;
 import java.time.LocalDateTime;
 import java.util.Optional;
 
-public interface TodoRepository extends JpaRepository<Todo, Long> {
+//  TodoRepositoryCustom 추가 상속을 통해 CRUD + QueryDSL 쿼스텀 쿼리 둘 다 사용 가능
+public interface TodoRepository extends JpaRepository<Todo, Long>, TodoRepositoryCustom {
 
     // Todo를 t로 조회
     // LEFT JOIN FETCH: Todo와 연관된 User를 한 번에 같이 가져오기 (N+1 방지)
